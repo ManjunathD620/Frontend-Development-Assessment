@@ -1,7 +1,7 @@
 
 
-import React, { useState, useEffect } from 'react';
-import { AreaChart, Area, PieChart, Pie, Cell, XAxis, YAxis, ResponsiveContainer, Tooltip, BarChart, Bar, LineChart, Line } from 'recharts';
+import { useState, useEffect } from 'react';
+import { AreaChart, Area, PieChart, Pie, Cell, XAxis, YAxis, ResponsiveContainer, Tooltip, BarChart, Bar } from 'recharts';
 import { createClient } from '@supabase/supabase-js';
 
 
@@ -56,10 +56,7 @@ const VoiceAnalyticsDashboard = () => {
     { name: 'Language Barrier', value: 8, color: '#5b8db8' },
   ]);
 
-  const [successRateData] = useState([
-    { month: 'Jan', rate: 75 }, { month: 'Feb', rate: 78 }, { month: 'Mar', rate: 82 },
-    { month: 'Apr', rate: 85 }, { month: 'May', rate: 88 }, { month: 'Jun', rate: 92 },
-  ]);
+
 
   const [callVolumeData] = useState([
     { hour: '9 AM', volume: 120 }, { hour: '10 AM', volume: 180 }, { hour: '11 AM', volume: 220 },
@@ -218,7 +215,7 @@ const VoiceAnalyticsDashboard = () => {
     setCallDurationData(initialCallDurationData);
   };
 
-  const CustomPieLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }: any) => {
+  const CustomPieLabel = ({ cx, cy, midAngle,  outerRadius,  index }: any) => {
     if (index === undefined) return null;
     
     const RADIAN = Math.PI / 180;
